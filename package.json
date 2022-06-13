@@ -1,8 +1,8 @@
 {
-  "name": "action-fuel-toolchain",
-  "version": "0.0.0",
+  "name": "fuel-toolchain",
+  "version": "0.1.0",
   "private": true,
-  "description": "GitHub Action to install Fuel toolchain with fuelup",
+  "description": "Install the Fuel toolchain",
   "main": "lib/main.js",
   "scripts": {
     "build": "rm -rf ./dist/* && ncc build src/main.ts --minify",
@@ -15,9 +15,15 @@
     "type": "git",
     "url": "git+https://github.com/FuelLabs/action-fuel-toolchain.git"
   },
-  "keywords": ["actions", "node", "setup"],
+  "keywords": [
+    "actions",
+    "sway",
+    "fuel",
+    "fuelup",
+    "toolchain"
+  ],
   "author": "Fuel Labs <contact@fuel.sh>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "dependencies": {
     "@actions/core": "^1.8.2",
     "@actions/exec": "^1.1.1",
@@ -33,7 +39,7 @@
     "eslint-plugin-jest": "^26.5.3",
     "jest": "^28.1.1",
     "js-yaml": "^4.1.0",
-    "prettier": "2.6.2",
+    "prettier": "^2.6.2",
     "ts-jest": "^28.0.4",
     "typescript": "^4.7.3"
   }
