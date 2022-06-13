@@ -1,0 +1,6 @@
+name: 'Install Fuel toolchain'
+description: 'Install Fuel toolchain using fuelup'
+author: 'Fuel Labs'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

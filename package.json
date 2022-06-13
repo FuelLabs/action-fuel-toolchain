@@ -1,0 +1,46 @@
+{
+  "name": "action-fuel-toolchain",
+  "version": "0.0.0",
+  "private": true,
+  "description": "GitHub Action to install Fuel toolchain with fuelup",
+  "main": "lib/main.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write '**/*.ts'",
+    "format-check": "prettier --check '**/*.ts'",
+    "lint": "eslint src/**/*.ts",
+    "package": "ncc build --source-map --license licenses.txt",
+    "test": "jest",
+    "all": "npm run build && npm run format && npm run lint && npm run package && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FuelLabs/action-fuel-toolchain.git"
+  },
+  "keywords": [
+    "actions",
+    "node",
+    "setup"
+  ],
+  "author": "Fuel Labs <contact@fuel.sh>",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/exec": "^1.1.1",
+    "@actions/io": "^1.1.2",
+    "@actions/tool-cache": "^2.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.42",
+    "@typescript-eslint/parser": "^5.8.1",
+    "@vercel/ncc": "^0.34.0",
+    "eslint": "^8.17.0",
+    "eslint-plugin-github": "^4.3.2",
+    "eslint-plugin-jest": "^26.5.3",
+    "jest": "^28.1.1",
+    "js-yaml": "^4.1.0",
+    "prettier": "2.6.2",
+    "ts-jest": "^28.0.4",
+    "typescript": "^4.4.4"
+  }
+}
