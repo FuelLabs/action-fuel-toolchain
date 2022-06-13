@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install Fuel toolchain
-        uses: FuelLabs/action-fuel-toolchain@master
+        uses: FuelLabs/action-fuel-toolchain@v0.1.0
 ```
 
 ## License
