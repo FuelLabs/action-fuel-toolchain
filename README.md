@@ -1,8 +1,8 @@
-<a href="https://github.com/actions/typescript-action/actions"><img alt="typescript-action status" src="https://github.com/actions/typescript-action/workflows/build-test/badge.svg"></a>
+# `fuel-toolchain` Action
 
-# Fuel Toolchain action
+[![Continuous integration](https://github.com/FuelLabs/action-fuel-toolchain/actions/workflows/ci.yml/badge.svg)](https://github.com/FuelLabs/action-fuel-toolchain/actions/workflows/ci.yml)
 
-Use this action to install Fuel toolchain using [`fuelup`](https://github.com/FuelLabs/fuelup/).
+Use this action to install the Fuel toolchain using [`fuelup`](https://github.com/FuelLabs/fuelup).
 
 Heavily based on [`@actions-rs/toolchain`](https://github.com/actions-rs/toolchain).
 
@@ -10,17 +10,17 @@ Heavily based on [`@actions-rs/toolchain`](https://github.com/actions-rs/toolcha
 
 ```yaml
 on: [push]
+
 name: build
+
 jobs:
   check:
     name: Sway project
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install Rust toolchain
-        uses: actions-rs/toolchain@v1
       - name: Install Fuel toolchain
-        uses: FuelLabs/action-fuel-toolchain@v1
+        uses: FuelLabs/action-fuel-toolchain@v0.1.0
 ```
 
 ## License
