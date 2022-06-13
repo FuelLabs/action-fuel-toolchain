@@ -1,5 +1,4 @@
-# Dependency directory
-node_modules
+__tests__/runner/*
 
 # Rest pulled from https://github.com/github/gitignore/blob/master/Node.gitignore
 # Logs
@@ -42,6 +41,7 @@ bower_components
 build/Release
 
 # Dependency directories
+node_modules/
 jspm_packages/
 
 # TypeScript v1 declaration files
@@ -90,10 +90,5 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
-# OS metadata
-.DS_Store
-Thumbs.db
-
-# Ignore built ts files
-__tests__/runner/*
-lib/**/*
+# IntelliJ IDEs
+.idea
