@@ -23,3 +23,14 @@ jobs:
       - run: npm run build
 
       - run: npm run test
+
+  install_latest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: ./
+
+      - name: Run forc version
+        run: forc --version
