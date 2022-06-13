@@ -144,8 +144,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const fuelup_1 = __nccwpck_require__(619);
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
-        const fuelup = yield fuelup_1.FuelUp.getOrInstall();
-        yield fuelup.installToolchain();
+        yield fuelup_1.FuelUp.getOrInstall();
     });
 }
 run();
