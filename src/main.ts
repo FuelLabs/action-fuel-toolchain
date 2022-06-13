@@ -1,10 +1,8 @@
-import * as args from './args';
-import { FuelUp } from './fuelup';
+import { FuelUp } from './fuelup'
 
 async function run(): Promise<void> {
-  const opts = args.getArgs();
-  const fuelup = await FuelUp.getOrInstall();
-  await fuelup.installToolchain(opts);
+  const fuelup = await FuelUp.getOrInstall()
+  await fuelup.installToolchain()
 }
 
-run();
+run()
