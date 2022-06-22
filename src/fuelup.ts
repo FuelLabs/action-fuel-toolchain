@@ -64,7 +64,7 @@ export class FuelUp {
   }
 
   async installToolchain(): Promise<number> {
-    return this.call(['install'])
+    return this.call(['toolchain', 'install', 'latest'])
   }
 
   async call(args: string[], options?: {}): Promise<number> {
