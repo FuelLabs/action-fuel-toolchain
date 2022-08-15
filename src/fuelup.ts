@@ -35,7 +35,7 @@ export class FuelUp {
       case 'darwin':
       case 'linux': {
         const fuelupSh = await tc.downloadTool(
-          'https://fuellabs.github.io/fuelup/fuelup-init.sh'
+          'https://raw.githubusercontent.com/FuelLabs/fuelup/bingcicle/update-fuelup-init/fuelup-init.sh'
         )
 
         // While the `fuelup-init.sh` is properly executed as is,
@@ -46,7 +46,7 @@ export class FuelUp {
         core.debug(`Executing chmod 755 on ${fuelupSh}`)
         await fs.chmod(fuelupSh, 0o755)
 
-        await exec.exec(fuelupSh)
+        await exec.exec(fuelupSh, ["--skip-toolchain-installation"])
         break
       }
 
