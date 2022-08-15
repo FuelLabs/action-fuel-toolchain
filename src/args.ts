@@ -6,6 +6,8 @@ export interface ToolchainOptions {
     components: string[];
 }
 
+export const ILLEGAL_INPUT_ERR_MESSAGE = "You cannot specify both an official toolchain with 'toolchain' and a custom toolchain with 'name' at the same time";
+export const NO_TOOLCHAIN_ERR_MESSAGE = "You must specify either an official toolchain with 'toolchain' or a custom toolchain with 'name'";
 
 export function getToolchainArgs(): ToolchainOptions {
     let toolchain: string = core.getInput("toolchain");
@@ -13,11 +15,11 @@ export function getToolchainArgs(): ToolchainOptions {
     let raw_components: string = core.getInput("components");
 
     if (name && toolchain) {
-	    throw new Error("You cannot specify both an official toolchain with 'toolchain' and a custom toolchain with 'name' at the same time")
+	    throw new Error(ILLEGAL_INPUT_ERR_MESSAGE)
     }
 
     if (!name && !toolchain) {
-	    throw new Error("You must specify either an official toolchain with 'toolchain' or a custom toolchain with 'name'")
+	    throw new Error(NO_TOOLCHAIN_ERR_MESSAGE)
     }
 
     let components = raw_components
