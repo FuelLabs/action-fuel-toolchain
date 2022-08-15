@@ -9,13 +9,21 @@ async function run(): Promise<void> {
 
 	if (opts.toolchain) {
 		switch (opts.toolchain) {
-			case 'latest':
-				await fuelup.installToolchain();
-				break;
-			default:
-				await fuelup.initToolchain(opts.toolchain);
-				await fuelup.setDefault(opts.toolchain)
+		case 'stable':
+		case 'beta':
+		case 'nightly':
+			throw new Error("${opts.toolchain} is not supported yet. Use one of: ['latest']")
+		case 'latest':
+			await fuelup.installToolchain(opts.toolchain);
+			break;
+		default:
+			throw new Error("Unknown toolchain. Use one of: ['latest']")
 		}
+	} else if (opts.name) {
+		await fuelup.initToolchain(opts.name);
+		await fuelup.setDefault(opts.name)
+	} if (!opts.toolchain && !opts.name && !opts.components) {
+		await fuelup.installToolchain('latest');
 	}
 
 	if (opts.components) {
