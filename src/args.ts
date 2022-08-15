@@ -1,9 +1,9 @@
 import * as core from '@actions/core'
 
 export interface ToolchainOptions {
-  toolchain: string
-  name: string
-  components: string[]
+  toolchain?: string
+  name?: string
+  components?: string[]
 }
 
 export const ILLEGAL_INPUT_ERR_MESSAGE =
