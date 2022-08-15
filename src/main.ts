@@ -16,6 +16,7 @@ async function run(): Promise<void> {
 		}
 	} else {
 		await fuelup.initToolchain(opts.name);
+		await fuelup.setDefault(opts.name)
 	}
 
 	if (opts.components) {
