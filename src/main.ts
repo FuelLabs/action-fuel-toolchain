@@ -22,8 +22,6 @@ async function run(): Promise<void> {
 	} else if (opts.name) {
 		await fuelup.initToolchain(opts.name);
 		await fuelup.setDefault(opts.name)
-	} if (!opts.toolchain && !opts.name && !opts.components) {
-		await fuelup.installToolchain('latest');
 	}
 
 	if (opts.components) {
