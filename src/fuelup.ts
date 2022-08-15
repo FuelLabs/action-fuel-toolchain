@@ -72,8 +72,8 @@ export class FuelUp {
     return this.call(['default', toolchain])
   }
 
-  async addComponent(component: string): Promise<number> {
-    return this.call(['component', 'add', component])
+  async addComponent(maybe_versioned_component: string): Promise<number> {
+    return this.call(['component', 'add', maybe_versioned_component])
   }
 
   async installToolchain(): Promise<number> {

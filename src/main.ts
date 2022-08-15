@@ -7,20 +7,18 @@ async function run(): Promise<void> {
 	const opts = getToolchainArgs();
 	const fuelup = await FuelUp.getOrInstall();
 
-	console.log(opts);
-
 	if (opts.toolchain) {
 		switch (opts.toolchain) {
-		case 'latest':
-			await fuelup.installToolchain();
+			case 'latest':
+				await fuelup.installToolchain();
+				break;
+			default:
+				await fuelup.initToolchain(opts.toolchain);
+				await fuelup.setDefault(opts.toolchain)
 		}
-	} else {
-		await fuelup.initToolchain(opts.name);
-		await fuelup.setDefault(opts.name)
 	}
 
 	if (opts.components) {
-		console.log(opts.components)
 		opts.components.map(async component => {
 				await fuelup.addComponent(component);
 		}
