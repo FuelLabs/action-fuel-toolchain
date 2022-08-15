@@ -16,7 +16,7 @@ export function getToolchainArgs(): ToolchainOptions {
 	    throw new Error("You cannot specify both an official toolchain with 'toolchain' and a custom toolchain with 'name' at the same time")
     }
 
-    if (!name || !toolchain) {
+    if (!name && !toolchain) {
 	    throw new Error("You must specify either an official toolchain with 'toolchain' or a custom toolchain with 'name'")
     }
 
