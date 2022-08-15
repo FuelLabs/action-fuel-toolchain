@@ -60,10 +60,10 @@ export class FuelUp {
     core.addPath(path.join(process.env.HOME!, '.fuelup', 'bin')) // eslint-disable-line @typescript-eslint/no-non-null-assertion
 
     // Assuming it is in the $PATH already
-    return new FuelUp('fuelup')
+    return new FuelUp('../fuelup')
   }
 
-  initToolchain(name: string): Promise<number> {
+  async initToolchain(name: string): Promise<number> {
     return this.call(['toolchain', 'new', name])
   }
 
