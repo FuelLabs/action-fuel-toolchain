@@ -31,6 +31,8 @@ jobs:
       - uses: actions/checkout@v3
 
       - uses: ./
+        with:
+          toolchain: latest
 
       - name: Run forc version
         run: forc --version
