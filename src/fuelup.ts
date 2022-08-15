@@ -3,7 +3,7 @@ import * as path from 'path'
 
 import * as core from '@actions/core'
 import * as exec from '@actions/exec'
-import * as io from '@actions/io'
+//import * as io from '@actions/io'
 import * as tc from '@actions/tool-cache'
 
 export class FuelUp {
@@ -26,8 +26,9 @@ export class FuelUp {
 
   // Will throw an error if `fuelup` is not installed.
   static async get(): Promise<FuelUp> {
-    const exePath = await io.which('fuelup', true)
-    return new FuelUp(exePath)
+    return new FuelUp('./fuelup')
+    //const exePath = await io.which('fuelup', true)
+    //return new FuelUp(exePath)
   }
 
   static async install(): Promise<FuelUp> {
