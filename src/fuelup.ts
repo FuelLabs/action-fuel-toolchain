@@ -63,6 +63,10 @@ export class FuelUp {
     return new FuelUp('fuelup')
   }
 
+  initToolchain(name: string): Promise<number> {
+    return this.call(['toolchain', 'new', name])
+  }
+
   async installToolchain(): Promise<number> {
     return this.call(['toolchain', 'install', 'latest'])
   }
