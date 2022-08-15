@@ -9,7 +9,10 @@ runs:
   main: 'dist/index.js'
 inputs:
   toolchain:
-    description: Name of the toolchain to create or use
+    description: Name of the official Fuel toolchain to create or use
+    required: false
+  name:
+    description: Name of the custom toolchain to create or use
     required: false
   components:
     description: Comma-separated list of components to be installed for a custom toolchain
