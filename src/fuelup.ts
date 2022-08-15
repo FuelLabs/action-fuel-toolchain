@@ -3,7 +3,7 @@ import * as path from 'path'
 
 import * as core from '@actions/core'
 import * as exec from '@actions/exec'
-//import * as io from '@actions/io'
+import * as io from '@actions/io'
 import * as tc from '@actions/tool-cache'
 
 export class FuelUp {
@@ -26,9 +26,8 @@ export class FuelUp {
 
   // Will throw an error if `fuelup` is not installed.
   static async get(): Promise<FuelUp> {
-    return new FuelUp('./fuelup')
-    //const exePath = await io.which('fuelup', true)
-    //return new FuelUp(exePath)
+    const exePath = await io.which('fuelup', true)
+    return new FuelUp(exePath)
   }
 
   static async install(): Promise<FuelUp> {
@@ -36,7 +35,7 @@ export class FuelUp {
       case 'darwin':
       case 'linux': {
         const fuelupSh = await tc.downloadTool(
-          'https://raw.githubusercontent.com/FuelLabs/fuelup/bingcicle/update-fuelup-init/fuelup-init.sh'
+	  'https://fuellabs.github.io/fuelup/fuelup-init.sh'
         )
 
         // While the `fuelup-init.sh` is properly executed as is,
@@ -61,7 +60,7 @@ export class FuelUp {
     core.addPath(path.join(process.env.HOME!, '.fuelup', 'bin')) // eslint-disable-line @typescript-eslint/no-non-null-assertion
 
     // Assuming it is in the $PATH already
-    return new FuelUp('./fuelup')
+    return new FuelUp('fuelup')
   }
 
   async initToolchain(name: string): Promise<number> {
