@@ -46,7 +46,7 @@ export class FuelUp {
         core.debug(`Executing chmod 755 on ${fuelupSh}`)
         await fs.chmod(fuelupSh, 0o755)
 
-        await exec.exec(fuelupSh, ["--skip-toolchain-installation"])
+        await exec.exec(fuelupSh, ['--skip-toolchain-installation'])
         break
       }
 
