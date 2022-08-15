@@ -20,6 +20,10 @@ async function run(): Promise<void> {
 
 	if (opts.components) {
 		console.log(opts.components)
+		opts.components.map(async component => {
+				await fuelup.addComponent(component);
+		}
+		);
 	}
 }
 
