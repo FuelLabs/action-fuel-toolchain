@@ -26,7 +26,7 @@ async function run(): Promise<void> {
 async function main(): Promise<void> {
     try {
         await run();
-    } catch (error) {
+    } catch (error: any) {
         core.setFailed(error.message);
     }
 }
