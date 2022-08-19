@@ -46,7 +46,7 @@ export class FuelUp {
         core.debug(`Executing chmod 755 on ${fuelupSh}`)
         await fs.chmod(fuelupSh, 0o755)
 
-        await exec.exec(fuelupSh)
+        await exec.exec(fuelupSh, ['--skip-toolchain-installation'])
         break
       }
 
@@ -63,8 +63,20 @@ export class FuelUp {
     return new FuelUp('fuelup')
   }
 
-  async installToolchain(): Promise<number> {
-    return this.call(['toolchain', 'install', 'latest'])
+  async initToolchain(name: string): Promise<number> {
+    return this.call(['toolchain', 'new', name])
+  }
+
+  async setDefault(toolchain: string): Promise<number> {
+    return this.call(['default', toolchain])
+  }
+
+  async addComponent(maybe_versioned_component: string): Promise<number> {
+    return this.call(['component', 'add', maybe_versioned_component])
+  }
+
+  async installToolchain(toolchain: string): Promise<number> {
+    return this.call(['toolchain', 'install', toolchain])
   }
 
   async call(args: string[], options?: {}): Promise<number> {

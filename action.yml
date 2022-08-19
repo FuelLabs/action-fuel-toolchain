@@ -1,5 +1,5 @@
 name: 'Install Fuel toolchain'
-description: 'Install Fuel toolchain using fuelup'
+description: 'Install the Fuel toolchain using fuelup'
 author: 'Fuel Labs'
 branding:
   icon: play-circle
@@ -7,3 +7,13 @@ branding:
 runs:
   using: 'node16'
   main: 'dist/index.js'
+inputs:
+  toolchain:
+    description: Name of the official Fuel toolchain to create or use
+    required: false
+  name:
+    description: Name of the custom toolchain to create or use
+    required: false
+  components:
+    description: Comma-separated list of components to be installed for a custom toolchain
+    required: false
