@@ -12,7 +12,7 @@ async function run(): Promise<void> {
       case 'stable':
       case 'beta':
         throw new Error(
-          "${opts.toolchain} is not supported yet. Use one of: ['latest']"
+          "${opts.toolchain} is not supported yet. Use one of: ['latest', 'nightly']"
         )
       case 'nightly':
       case 'latest':
