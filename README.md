@@ -29,16 +29,16 @@ jobs:
       - name: Install Fuel toolchain
         uses: FuelLabs/action-fuel-toolchain@v0.3.0
         with:
-          toolchain: latest
+          toolchain: latest # or nightly
 ```
 
 ## Inputs
 
-| Name         | Required | Description                                                                                                                                                         | Type   | Default |
-| ------------ | :------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ------- |
-| `toolchain`  |          | Official [toolchain](https://fuellabs.github.io/fuelup/master/concepts/toolchains.html#toolchain-specification) name to use. Currently, only `latest` is supported. | string |         |
-| `name`       |          | [Custom toolchain](https://fuellabs.github.io/fuelup/master/concepts/toolchains.html#custom-toolchains) name to use                                                 | string |         |
-| `components` |          | Comma-separated list of the additional components to install. Component names may optionally be appended with their version, ex. `forc@0.19.2, fuel-core`           | string |         |
+| Name         | Required | Description                                                                                                                                                       | Type   | Default |
+| ------------ | :------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ------- |
+| `toolchain`  |          | Official [toolchain](https://fuellabs.github.io/fuelup/master/concepts/toolchains.html#toolchain-specification) name to use. possible values: `latest`, `nightly` | string |         |
+| `name`       |          | [Custom toolchain](https://fuellabs.github.io/fuelup/master/concepts/toolchains.html#custom-toolchains) name to use                                               | string |         |
+| `components` |          | Comma-separated list of the additional components to install. Component names may optionally be appended with their version, ex. `forc@0.19.2, fuel-core`         | string |         |
 
 ## Components
 
