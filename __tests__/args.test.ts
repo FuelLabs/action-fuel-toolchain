@@ -21,6 +21,16 @@ describe('action-fuel-toolchain', () => {
     expect(args.name).toBe('custom-toolchain')
   })
 
+  test('with date and toolchain should pass', () => {
+    process.env['INPUT_TOOLCHAIN'] = 'latest'
+    process.env['INPUT_NAME'] = ''
+    process.env['INPUT_DATE'] = '2023-01-18'
+
+    const args = getToolchainArgs()
+    expect(args.toolchain).toBe('latest')
+    expect(args.date).toBe('2023-01-18')
+  })
+
   test('no toolchain or name should fail', () => {
     process.env['INPUT_TOOLCHAIN'] = ''
     process.env['INPUT_NAME'] = ''
