@@ -20,10 +20,6 @@ export function getToolchainArgs(): ToolchainOptions {
     throw new Error(ILLEGAL_INPUT_ERR_MESSAGE)
   }
 
-  if (!name && !toolchain) {
-    throw new Error(NO_TOOLCHAIN_ERR_MESSAGE)
-  }
-
   let components = raw_components
     .split(',')
     .map((item: string) => item.trim())
