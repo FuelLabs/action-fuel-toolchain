@@ -17,9 +17,9 @@ async function run(): Promise<void> {
       case 'latest':
       case 'beta-1':
       case 'beta-2':
-        let toolchain = opts.toolchain;
+        let toolchain = opts.toolchain
         if (opts.date) {
-          toolchain += "-" + opts.date;
+          toolchain += '-' + opts.date
         }
         await fuelup.installToolchain(toolchain)
         break

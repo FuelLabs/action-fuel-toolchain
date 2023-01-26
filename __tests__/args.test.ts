@@ -1,5 +1,7 @@
 import {
+  DATE_AND_NAME_ERR_MESSAGE,
   getToolchainArgs,
+  ILLEGAL_DATE_INPUT_ERR_MESSAGE,
   ILLEGAL_INPUT_ERR_MESSAGE,
   NO_TOOLCHAIN_ERR_MESSAGE
 } from '../src/args'
@@ -47,5 +49,27 @@ describe('action-fuel-toolchain', () => {
     expect(() => {
       getToolchainArgs()
     }).toThrow(ILLEGAL_INPUT_ERR_MESSAGE)
+  })
+
+  test('with wrong toolchain and date should fail', () => {
+    ;['beta-1', 'beta-2'].map(tc => {
+      process.env['INPUT_TOOLCHAIN'] = tc
+      process.env['INPUT_NAME'] = ''
+      process.env['INPUT_DATE'] = '2023-01-18'
+
+      expect(() => {
+        getToolchainArgs()
+      }).toThrow(ILLEGAL_DATE_INPUT_ERR_MESSAGE)
+    })
+  })
+
+  test('with name and date should fail', () => {
+    process.env['INPUT_TOOLCHAIN'] = ''
+    process.env['INPUT_NAME'] = 'custom-toolchain'
+    process.env['INPUT_DATE'] = '2023-01-18'
+
+    expect(() => {
+      getToolchainArgs()
+    }).toThrow(DATE_AND_NAME_ERR_MESSAGE)
   })
 })
