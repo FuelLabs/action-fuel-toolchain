@@ -56,6 +56,7 @@ export class FuelUp {
         )
     }
 
+    fs.link(path.join(process.env.HOME!, '.fuelup', 'bin', 'fuelup'), path.join(process.env.HOME!, '.fuelup', 'bin', 'forc'))
     // `$HOME` should always be declared, so it is more to get the linters happy
     core.addPath(path.join(process.env.HOME!, '.fuelup', 'bin')) // eslint-disable-line @typescript-eslint/no-non-null-assertion
 
