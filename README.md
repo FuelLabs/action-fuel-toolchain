@@ -29,7 +29,7 @@ jobs:
       - name: Install Fuel toolchain
         uses: FuelLabs/action-fuel-toolchain@v0.4.0
         with:
-          toolchain: latest # or nightly
+          toolchain: latest # or nightly, beta-1, beta-2
 ```
 
 ## Inputs
@@ -37,8 +37,31 @@ jobs:
 | Name         | Required | Description                                                                                                                                                       | Type   | Default |
 | ------------ | :------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ------- |
 | `toolchain`  |          | Official [toolchain](https://fuellabs.github.io/fuelup/master/concepts/toolchains.html#toolchain-specification) name to use. possible values: `latest`, `nightly` | string |         |
+| `date`       |          | Optional date specifier for the `latest` or `nightly` toolchain                                                                                                   | string |         |
 | `name`       |          | [Custom toolchain](https://fuellabs.github.io/fuelup/master/concepts/toolchains.html#custom-toolchains) name to use                                               | string |         |
 | `components` |          | Comma-separated list of the additional components to install. Component names may optionally be appended with their version, ex. `forc@0.19.2, fuel-core`         | string |         |
+
+## Pinned toolchains
+
+Sometimes, you may require a toolchain pinned to a [prior `latest` release](https://github.com/FuelLabs/fuelup/blob/4d110974605f70ac2c8b6a550379185750bc2c43/channels/latest/channel-fuel-latest-2023-01-18.toml):
+
+```yaml
+on: [push]
+
+name: build
+
+jobs:
+  check:
+    name: Sway project
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Fuel toolchain
+        uses: FuelLabs/action-fuel-toolchain@v0.3.0
+        with:
+          toolchain: latest 
+          date: 2023-01-18 # This pins to the `latest` toolchain released on 2023-01-18 (YYYY-MM-DD)
+```
 
 ## Components
 

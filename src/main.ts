@@ -10,16 +10,23 @@ async function run(): Promise<void> {
   if (opts.toolchain) {
     switch (opts.toolchain) {
       case 'stable':
-      case 'beta':
         throw new Error(
-          "${opts.toolchain} is not supported yet. Use one of: ['latest', 'nightly']"
+          "${opts.toolchain} is not supported yet. Use one of: ['latest', 'nightly', 'beta-1', 'beta-2']"
         )
       case 'nightly':
       case 'latest':
-        await fuelup.installToolchain(opts.toolchain)
+      case 'beta-1':
+      case 'beta-2':
+        let toolchain = opts.toolchain
+        if (opts.date) {
+          toolchain += '-' + opts.date
+        }
+        await fuelup.installToolchain(toolchain)
         break
       default:
-        throw new Error("Unknown toolchain. Use one of: ['latest', 'nightly']")
+        throw new Error(
+          "Unknown toolchain. Use one of: ['latest', 'nightly', 'beta-1', 'beta-2']"
+        )
     }
   } else if (opts.name) {
     await fuelup.initToolchain(opts.name)
