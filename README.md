@@ -29,7 +29,7 @@ jobs:
       - name: Install Fuel toolchain
         uses: FuelLabs/action-fuel-toolchain@v0.4.0
         with:
-          toolchain: latest # or nightly, beta-1, beta-2
+          toolchain: latest # or nightly, beta-1, beta-2, beta-3
 ```
 
 ## Inputs
