@@ -52,7 +52,7 @@ describe('action-fuel-toolchain', () => {
   })
 
   test('with wrong toolchain and date should fail', () => {
-    ['beta-1', 'beta-2'].map(tc => {
+    ['beta-1', 'beta-2', 'beta-3'].map(tc => {
       process.env['INPUT_TOOLCHAIN'] = tc
       process.env['INPUT_NAME'] = ''
       process.env['INPUT_DATE'] = '2023-01-18'
