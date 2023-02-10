@@ -11,12 +11,13 @@ async function run(): Promise<void> {
     switch (opts.toolchain) {
       case 'stable':
         throw new Error(
-          "${opts.toolchain} is not supported yet. Use one of: ['latest', 'nightly', 'beta-1', 'beta-2']"
+          "${opts.toolchain} is not supported yet. Use one of: ['latest', 'nightly', 'beta-1', 'beta-2', 'beta-3']"
         )
       case 'nightly':
       case 'latest':
       case 'beta-1':
       case 'beta-2':
+      case 'beta-3':
         let toolchain = opts.toolchain
         if (opts.date) {
           toolchain += '-' + opts.date
@@ -25,7 +26,7 @@ async function run(): Promise<void> {
         break
       default:
         throw new Error(
-          "Unknown toolchain. Use one of: ['latest', 'nightly', 'beta-1', 'beta-2']"
+          "Unknown toolchain. Use one of: ['latest', 'nightly', 'beta-1', 'beta-2', 'beta-3']"
         )
     }
   } else if (opts.name) {
