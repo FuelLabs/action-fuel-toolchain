@@ -36,9 +36,9 @@ jobs:
 
 | Name         | Required | Description                                                                                                                                                       | Type   | Default |
 | ------------ | :------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ------- |
-| `toolchain`  |          | Official [toolchain](https://fuellabs.github.io/fuelup/master/concepts/toolchains.html#toolchain-specification) name to use. possible values: `latest`, `nightly` | string |         |
+| `toolchain`  |          | Official [toolchain](https://install.fuel.network/master/concepts/toolchains.html#toolchain-specification) name to use. possible values: `latest`, `nightly` | string |         |
 | `date`       |          | Optional date specifier for the `latest` or `nightly` toolchain                                                                                                   | string |         |
-| `name`       |          | [Custom toolchain](https://fuellabs.github.io/fuelup/master/concepts/toolchains.html#custom-toolchains) name to use                                               | string |         |
+| `name`       |          | [Custom toolchain](https://install.fuel.network/master/concepts/toolchains.html#custom-toolchains) name to use                                               | string |         |
 | `components` |          | Comma-separated list of the additional components to install. Component names may optionally be appended with their version, ex. `forc@0.19.2, fuel-core`         | string |         |
 
 ## Pinned toolchains
@@ -65,7 +65,7 @@ jobs:
 
 ## Components
 
-This action supports installing fuelup [components](https://fuellabs.github.io/fuelup/master/concepts/components.html) on custom toolchains:
+This action supports installing fuelup [components](https://install.fuel.network/master/concepts/components.html) on custom toolchains:
 
 ### Custom toolchain
 

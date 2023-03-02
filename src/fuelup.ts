@@ -35,7 +35,7 @@ export class FuelUp {
       case 'darwin':
       case 'linux': {
         const fuelupSh = await tc.downloadTool(
-          'https://fuellabs.github.io/fuelup/fuelup-init.sh'
+          'https://install.fuel.network/fuelup-init.sh'
         )
 
         // While the `fuelup-init.sh` is properly executed as is,
