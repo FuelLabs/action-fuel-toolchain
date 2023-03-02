@@ -71,7 +71,7 @@ This action supports installing fuelup [components](https://install.fuel.network
 
 ```yaml
 - name: Install Fuel toolchain
-  uses: FuelLabs/action-fuel-toolchain@v0
+  uses: FuelLabs/action-fuel-toolchain@v0.6.0
   with:
     name: my-custom-toolchain
     components: forc, fuel-core
