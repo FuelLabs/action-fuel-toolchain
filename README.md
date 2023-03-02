@@ -27,7 +27,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install Fuel toolchain
-        uses: FuelLabs/action-fuel-toolchain@v0.4.0
+        uses: FuelLabs/action-fuel-toolchain@v0.6.0
         with:
           toolchain: latest # or nightly, beta-1, beta-2, beta-3
 ```
@@ -57,7 +57,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install Fuel toolchain
-        uses: FuelLabs/action-fuel-toolchain@v0.3.0
+        uses: FuelLabs/action-fuel-toolchain@v0.6.0
         with:
           toolchain: latest 
           date: 2023-01-18 # This pins to the `latest` toolchain released on 2023-01-18 (YYYY-MM-DD)
@@ -71,7 +71,7 @@ This action supports installing fuelup [components](https://install.fuel.network
 
 ```yaml
 - name: Install Fuel toolchain
-  uses: FuelLabs/action-fuel-toolchain@v0.4.0
+  uses: FuelLabs/action-fuel-toolchain@v0.6.0
   with:
     name: my-custom-toolchain
     components: forc, fuel-core
@@ -81,7 +81,7 @@ This action supports installing fuelup [components](https://install.fuel.network
 
 ```yaml
 - name: Install Fuel toolchain
-  uses: FuelLabs/action-fuel-toolchain@v0.4.0
+  uses: FuelLabs/action-fuel-toolchain@v0.6.0
   with:
     name: my-custom-toolchain
     components: forc
@@ -91,7 +91,7 @@ This action supports installing fuelup [components](https://install.fuel.network
 
 ```yaml
 - name: Install Fuel toolchain
-  uses: FuelLabs/action-fuel-toolchain@v0.4.0
+  uses: FuelLabs/action-fuel-toolchain@v0.6.0
   with:
     name: my-custom-toolchain
     components: forc, fuel-core@0.8.5
